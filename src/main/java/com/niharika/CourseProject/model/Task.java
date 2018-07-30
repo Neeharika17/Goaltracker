@@ -1,5 +1,5 @@
-package com.niharika.CourseProject.model;
 
+package com.niharika.CourseProject.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
