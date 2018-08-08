@@ -31,26 +31,22 @@ public class LoginController {
 	String email1;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String showLogin() {
+
+	public String landingPage() {
 		return "welcome";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String welcomePage() {
+	public String loginPage() {
 		return "login";
 	}
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String homePage() {
-		return "home";
-	}
-
-	@RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/usertasks", method = RequestMethod.GET)
 	public String showTasks(ModelMap model) {
-		return "task";
+		return "usertasks";
 	}
 
-	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/usertasks", method = RequestMethod.POST)
 	public String login(@RequestParam("email") String email,
 			@RequestParam(value = "password", required = true) String pass, ModelMap model) {
 		boolean isValid = service.validate(email, pass);
@@ -61,36 +57,38 @@ public class LoginController {
 			System.out.println("hello this is the user id" + userId);
 			model.put("userId", userId);
 			model.put("value", value);
-			return "task";
+
+			return "usertasks";
 		} else {
 			model.put("errorMessage", "Invalid Credentials!!");
-			return "Login1";
+
+			return "login";
 		}
 	}
 
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String showRegister() {
-		return "Register1";
+		return "register";
 	}
 
-	@RequestMapping(value = "/forgot", method = RequestMethod.GET)
+	@RequestMapping(value = "/forgotpassword", method = RequestMethod.GET)
 	public String forgotpass() {
 		return "forgotpassword";
 	}
 
-	@RequestMapping(value = "/forgot", method = RequestMethod.POST)
+	@RequestMapping(value = "/forgotpassword", method = RequestMethod.POST)
 	public String showforgotpass(@RequestParam String email, ModelMap model) {
 		boolean isValid = service.validate(email);
 		if (isValid) {
 			model.put("email", email);
-			return "security_ques";
+			return "securityquestions";
 		}else {
 			model.put("errorMessage", "Invalid Credentials!!");
-			return "Login1";
+			return "login";
 		}
 	}
 
-	@RequestMapping(value = "/questions", method = RequestMethod.GET)
+	@RequestMapping(value = "/securityquestions", method = RequestMethod.GET)
 	public String questions(@RequestParam(value = "email", required = true) String email,
 			@RequestParam(value = "fav_book", required = true) String fav_book,
 			@RequestParam(value = "fav_movie", required = true) String fav_movie,
@@ -111,11 +109,11 @@ public class LoginController {
 			@RequestParam(value = "password", required = true) String password) {
 		String email1 = email.replace("/", "");
 		User u = service.findEmail(email1);
-//		service.updatePassword(password);
-		return "Login";
+		// service.updatePassword(password);
+		return "login";
 	}
 	
-	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String home(@RequestParam(value = "name", required = true) String name,
 			@RequestParam(value = "email", required = true) String email,
 			@RequestParam(value = "password", required = true) String password,
@@ -123,12 +121,12 @@ public class LoginController {
 			@RequestParam(value = "fav_movie", required = true) String fav_movie,
 			@RequestParam(value = "fav_city", required = true) String fav_city) {
 		service.registerUser(name, email, password, fav_book, fav_movie, fav_city);
-		return "Login1";
+		return "login";
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout() {
-		return "Login1";
+		return "login";
 	}
 
 }

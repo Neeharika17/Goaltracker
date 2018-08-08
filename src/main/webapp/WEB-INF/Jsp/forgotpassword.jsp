@@ -7,7 +7,7 @@
 <title>Forgot Password</title>
 </head>
 <body>
-<form action="/forgot" method="post">
+<form action="/forgotpassword" method="post">
 Please Enter your Registered Email Address<input type="text" name="email">
 <button type="submit">Submit</button>
 </form>

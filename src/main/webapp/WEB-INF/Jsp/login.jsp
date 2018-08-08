@@ -20,7 +20,7 @@
 </head>
 <body class="text-center">
 
-	<form class="form-signin" method="post" action="/loginUser">
+	<form class="form-signin" method="post" action="/usertasks">
 		<!--       <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
 		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 		<label for="inputEmail" class="sr-only">Email address</label> <input
@@ -35,11 +35,11 @@
 			</label>
 		</div>
 		<div>
-		<a href="/forgot">Forgot Password</a>
+		<a href="/forgotpassword">Forgot Password</a>
 		</div>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
 			in</button>
-		<a href="/signup">Sign Up</a> <a href="/adminlogin">Admin Login</a>
+		<a href="/register">Sign Up</a> <a href="/adminlogin">Admin Login</a>
 	</form>
 </body>
 
