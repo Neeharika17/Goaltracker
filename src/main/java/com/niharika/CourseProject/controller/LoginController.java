@@ -46,7 +46,7 @@ public class LoginController {
 		return "usertasks";
 	}
 
-	@RequestMapping(value = "/usertasks", method = RequestMethod.POST)
+	@RequestMapping(value = "/signin", method = RequestMethod.POST)
 	public String login(@RequestParam("email") String email,
 			@RequestParam(value = "password", required = true) String pass, ModelMap model) {
 		boolean isValid = service.validate(email, pass);
@@ -57,11 +57,9 @@ public class LoginController {
 			System.out.println("hello this is the user id" + userId);
 			model.put("userId", userId);
 			model.put("value", value);
-
-			return "usertasks";
+			return "dashboard";
 		} else {
 			model.put("errorMessage", "Invalid Credentials!!");
-
 			return "login";
 		}
 	}
