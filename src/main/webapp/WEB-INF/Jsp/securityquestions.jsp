@@ -9,7 +9,7 @@
 <body>
 
 
-<form action="/questions">
+<form action="/securityquestions">
 <input type="hidden" name="email" value=${email }/>
 fav_book<input type="text" name="fav_book">
 fav_movie<input type="text" name="fav_movie">

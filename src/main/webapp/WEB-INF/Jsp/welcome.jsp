@@ -31,7 +31,7 @@
          <!--   <nav class="nav nav-masthead justify-content-right clearfix"> -->
           
           
-           <a href="/next" class="btn btn-info active" ><b>Join Us</b></a>
+           <a href="/login" class="btn btn-info active" ><b>Join Us</b></a>
             
 <!--           </nav> -->
 

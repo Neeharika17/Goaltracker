@@ -34,7 +34,7 @@
 		</div>
 	</nav>
 	<div class="container">
-		<a href="/addnew?id=${userId }">ADD</a>
+		<a href="/addtask?id=${userId }">ADD</a>
 	</div>
 	
 	<c:if test="${empty value}"> <p> <div id='one' style='display:none;'> <p/> </c:if>

@@ -55,7 +55,7 @@ public String showAllUsers(ModelMap model)
 {
 	ArrayList<User> value =service.findAllUsers();
 	model.put("value", value);
-	return "Allusers";
+	return "showusers";
 }
 
 @RequestMapping("/deleteuser")
@@ -65,7 +65,7 @@ public String deleteUser(@RequestParam long id,ModelMap model)
 	userRepo.delete(id);
 	ArrayList<User> value =service.findAllUsers();
 	model.put("value", value);
-	return "Allusers";
+	return "showusers";
 }
 
 
@@ -76,7 +76,7 @@ public String deleteTask(@RequestParam long id,ModelMap model)
  taskRepo.delete(id);
 	ArrayList<Task> value =service.findAllTasks();
 	model.put("value", value);
-	return "task";
+	return "usertasks";
 }
 
 
@@ -91,7 +91,7 @@ public String updateTask(@RequestParam long id,ModelMap model)
 Task t=	service.findone(id);
  model.put("value",t);
 	
-return "UpdateTask";
+return "updateTask";
 
 }
 @RequestMapping(value="/updatetasks",method=RequestMethod.POST)
@@ -108,7 +108,7 @@ long Userid = Integer.parseInt(userId);
 User u=userRepo.findOne(Userid);
 	
 	service.updateTask(id,desc,u,d);
-	return "redirect:/loginUser";
+	return "redirect:/usertasks";
 }
 
 
@@ -116,7 +116,7 @@ User u=userRepo.findOne(Userid);
 
 
 
-@RequestMapping("/savetask1")
+@RequestMapping("/savetask")
 
 public String updated(@RequestParam String id,@RequestParam String desc,@RequestParam String fulldate,ModelMap model) throws ParseException
 
@@ -133,10 +133,10 @@ taskRepo.save(t);
 //System.out.println(user_id);
 //ArrayList<Task> value =service.findAllTasks(user_id);
 //model.put("value", value);
-return "redirect:/loginUser";
+return "redirect:/usertasks";
 }
 
-@RequestMapping("/addnew")
+@RequestMapping("/addtask")
 public String addtask()
 {
 	return "addtask";

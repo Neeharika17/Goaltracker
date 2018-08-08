@@ -18,7 +18,7 @@
 </head>
 <body class="text-center">
 
-<form class="form-signin" method="post" action="/signup">
+<form class="form-signin" method="post" action="/register">
 <h1 class="h3 mb-3 font-weight-normal">Please Register Here..!</h1>
 Name:<input type="text" name="name"  class="form-control" required/>
 Email : <input type="email" name="email" class="form-control" required/>
