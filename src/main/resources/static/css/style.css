@@ -1,6 +1,6 @@
 body{
 	height:100vh;
-	font-size:1rem;
+	font-size:14px;
 }
 
 .welcome-page{
@@ -10,7 +10,27 @@ body{
 }
 
 .header{
-	border:1px solid red;
+	border:50px solid red;
 	height:100px;
 	width:100px;
+}
+
+/* .nav-bar{ */
+/* 	background:red; */
+/* 	color:white; */
+/* 	display:inline-block; */
+/* 	width:10%; */
+/* 	padding:10px; */
+/* } */
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
 }

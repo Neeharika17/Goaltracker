@@ -126,5 +126,7 @@ public class LoginController {
 	public String logout() {
 		return "login";
 	}
+	
+	
 
 }
